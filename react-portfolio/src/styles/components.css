@@ -304,84 +304,108 @@
     margin-top: 0.5rem;
 }
 
-/* Profile Card - PURE WHITE BORDER (NO PINK) */
+/* Profile Card - New Project Showcase Design */
 .hero-profile {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 600px;
 }
 
-.profile-card {
-    position: relative;
-    background: var(--gradient-card);
-    border: 1px solid var(--glass-border);
-    border-radius: 32px;
-    padding: 3rem;
-    text-align: center;
-    backdrop-filter: blur(20px);
-    max-width: 420px;
-}
-
-/* Profile image - PURE WHITE/GRAY BORDER ONLY */
-.profile-image-wrapper {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    margin: 0 auto 2rem;
-    border-radius: 50%;
-    padding: 4px;
-    background: linear-gradient(135deg, #ffffff 0%, #666666 50%, #333333 100%);
-}
-
-.profile-image {
+/* Project Screenshots Background - Behind profile */
+.project-showcase {
+    position: absolute;
+    top: 0;
+    right: -80px;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--bg-primary);
+    pointer-events: none;
+    z-index: 1;
 }
 
-.profile-info h3 {
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.profile-info p {
-    color: var(--text-tertiary);
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
-}
-
-.profile-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 1.25rem;
-    background: var(--glass-bg);
+.project-screenshot {
+    position: absolute;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
     border: 1px solid var(--glass-border);
-    border-radius: 9999px;
+    background: var(--bg-secondary);
 }
 
-.status-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--text-primary);
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
+.project-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.profile-status span {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+/* Digistall - top right, slightly behind profile */
+.project-screenshot.project-1 {
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 250px;
+    transform: rotate(5deg);
+    z-index: 1;
 }
 
-/* Floating Cards - CLOSER to profile */
+/* Dubai - bottom right, overlapping with profile area */
+.project-screenshot.project-2 {
+    top: 230px;
+    right: -40px;
+    width: 380px;
+    height: 240px;
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+
+/* Transparent Profile Image - In front of screenshots */
+.profile-transparent-wrapper {
+    position: relative;
+    z-index: 5;
+    max-width: 550px;
+    margin-top: -250px;
+}
+
+.profile-transparent {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6));
+}
+
+/* Name Badge - Below profile image */
+.profile-name-badge {
+    position: relative;
+    z-index: 10;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    margin-top: -90px;
+    text-align: center;
+}
+
+.profile-name-badge h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.profile-name-badge p {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+
+/* Floating Cards - In front of everything */
 .floating-cards {
     position: absolute;
-    inset: -60px;
+    inset: -20px;
     pointer-events: none;
+    z-index: 20;
 }
 
 .floating-card {
@@ -397,22 +421,22 @@
     animation: float 6s ease-in-out infinite;
 }
 
-/* Positioned CLOSER to the profile */
+/* Positioned near the profile */
 .floating-card:nth-child(1) {
-    top: 15%;
-    left: -80px;
+    top: 5%;
+    left: -30px;
     animation-delay: 0s;
 }
 
 .floating-card:nth-child(2) {
-    top: 50%;
-    right: -90px;
+    top: 45%;
+    right: -20px;
     animation-delay: 2s;
 }
 
 .floating-card:nth-child(3) {
-    bottom: 15%;
-    left: -70px;
+    bottom: 25%;
+    left: -25px;
     animation-delay: 4s;
 }
 
@@ -434,7 +458,7 @@
 
 .floating-card-text p {
     font-size: 0.7rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 @media (max-width: 900px) {
@@ -446,6 +470,7 @@
     .hero-profile {
         order: -1;
         margin-bottom: 2rem;
+        min-height: 350px;
     }
 
     .hero-description {
@@ -464,9 +489,19 @@
         display: none;
     }
 
-    .profile-image-wrapper {
-        width: 220px;
-        height: 220px;
+    .project-showcase {
+        display: none;
+    }
+
+    .profile-transparent-wrapper {
+        max-width: 300px;
+    }
+
+    .profile-name-badge {
+        left: 50%;
+        top: auto;
+        bottom: -20px;
+        transform: translateX(-50%);
     }
 }
 
@@ -533,6 +568,13 @@
     gap: 1.5rem;
 }
 
+.about-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
 .about-card {
     padding: 2rem;
     background: var(--glass-bg);
@@ -593,6 +635,77 @@
 
 @media (max-width: 900px) {
     .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cards,
+    .about-bottom-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ============ HOBBIES SECTION ============ */
+.hobbies {
+    position: relative;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.hobby-card {
+    background: var(--gradient-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover {
+    border-color: var(--text-muted);
+    box-shadow: var(--shadow-lg);
+}
+
+.hobby-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text-primary);
+    border-radius: 12px;
+    color: var(--bg-primary);
+    flex-shrink: 0;
+}
+
+.hobby-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hobby-content p {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hobbies-grid {
         grid-template-columns: 1fr;
     }
 }

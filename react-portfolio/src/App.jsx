@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
+import Hobbies from './components/sections/Hobbies';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Journey from './components/sections/Journey';
@@ -69,6 +70,7 @@ function App() {
             <main>
               <Hero />
               <About />
+              <Hobbies />
               <Skills />
               <Projects />
               <Journey />

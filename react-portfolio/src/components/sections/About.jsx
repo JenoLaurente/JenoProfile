@@ -103,9 +103,9 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    {/* Right Column - Expertise Cards */}
+                    {/* Right Column - Top 2 Expertise Cards */}
                     <div className="about-cards">
-                        {expertiseData.map((item, index) => {
+                        {expertiseData.slice(0, 2).map((item, index) => {
                             const IconComponent = iconMap[item.icon];
                             return (
                                 <motion.div
@@ -136,6 +136,39 @@ const About = () => {
                         })}
                     </div>
                 </motion.div>
+
+                {/* Bottom - Remaining Expertise Cards (Mobile & UI/UX) */}
+                <div className="about-bottom-grid">
+                    {expertiseData.slice(2).map((item, index) => {
+                        const IconComponent = iconMap[item.icon];
+                        return (
+                            <motion.div
+                                key={item.title}
+                                className="about-card"
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="about-card-header">
+                                    <div className="about-card-icon">
+                                        <IconComponent size={24} />
+                                    </div>
+                                    <h4>{item.title}</h4>
+                                </div>
+                                <p>{item.description}</p>
+                                <div className="tech-tags">
+                                    {item.technologies.map((tech) => (
+                                        <span key={tech} className="tech-tag">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );

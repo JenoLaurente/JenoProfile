@@ -3,6 +3,44 @@ import { motion } from 'framer-motion';
 import { Rocket, Mail, Github, Palette, Code, Server } from 'lucide-react';
 import { profileData } from '../../data/portfolioData';
 
+// Counter component - defined outside Hero to maintain stable reference
+const Counter = ({ target, duration = 2000 }) => {
+    const [count, setCount] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        if (hasAnimated) return; // Don't re-animate once completed
+
+        let startTime;
+        let animationFrameId;
+
+        const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            setCount(Math.floor(progress * target));
+
+            if (progress < 1) {
+                animationFrameId = requestAnimationFrame(animate);
+            } else {
+                setHasAnimated(true); // Mark as completed
+            }
+        };
+
+        const timer = setTimeout(() => {
+            animationFrameId = requestAnimationFrame(animate);
+        }, 500);
+
+        return () => {
+            clearTimeout(timer);
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+        };
+    }, [target, duration, hasAnimated]);
+
+    return count;
+};
+
 const Hero = () => {
     const [currentRole, setCurrentRole] = useState('');
     const [roleIndex, setRoleIndex] = useState(0);
@@ -30,27 +68,6 @@ const Hero = () => {
 
         return () => clearTimeout(timeout);
     }, [currentRole, isDeleting, roleIndex]);
-
-    // Counter animation hook
-    const Counter = ({ target, duration = 2000 }) => {
-        const [count, setCount] = useState(0);
-
-        useEffect(() => {
-            let startTime;
-            const animate = (timestamp) => {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-                setCount(Math.floor(progress * target));
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                }
-            };
-            const timer = setTimeout(() => requestAnimationFrame(animate), 500);
-            return () => clearTimeout(timer);
-        }, [target, duration]);
-
-        return count;
-    };
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -160,51 +177,77 @@ const Hero = () => {
                         </motion.div>
                     </motion.div>
 
-                    {/* Hero Profile */}
+                    {/* Hero Profile - New Design with Project Showcase */}
                     <motion.div
                         className="hero-profile"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        {/* Profile Card */}
-                        <div className="profile-card">
-                            <div className="profile-image-wrapper">
-                                <img
-                                    src="/images/Jeno.jpg"
-                                    alt={profileData.name}
-                                    className="profile-image"
-                                />
-                            </div>
-                            <div className="profile-info">
-                                <h3>{profileData.nickname}</h3>
-                                <p>{profileData.title}</p>
-                                <div className="profile-status">
-                                    <div className="status-dot" />
-                                    <span>Open to work</span>
-                                </div>
-                            </div>
+                        {/* Project Screenshots Background */}
+                        <div className="project-showcase">
+                            <motion.div
+                                className="project-screenshot project-1"
+                                initial={{ opacity: 0, x: 50, rotate: 5 }}
+                                animate={{ opacity: 1, x: 0, rotate: 8 }}
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                            >
+                                <img src="/images/Digistall.png" alt="Digistall Project" />
+                            </motion.div>
+                            <motion.div
+                                className="project-screenshot project-2"
+                                initial={{ opacity: 0, x: 80, rotate: -5 }}
+                                animate={{ opacity: 1, x: 0, rotate: -5 }}
+                                transition={{ duration: 0.8, delay: 1 }}
+                            >
+                                <img src="/images/Dubai.png" alt="Dubai Project" />
+                            </motion.div>
+                        </div>
 
-                            {/* Floating Cards - INSIDE profile card for better positioning */}
-                            <div className="floating-cards">
-                                {floatingCards.map((card, index) => (
-                                    <motion.div
-                                        key={index}
-                                        className="floating-card"
-                                        initial={{ opacity: 0, scale: 0 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 1 + index * 0.2, duration: 0.5 }}
-                                    >
-                                        <div className="floating-card-icon">
-                                            <card.icon size={18} />
-                                        </div>
-                                        <div className="floating-card-text">
-                                            <h4>{card.title}</h4>
-                                            <p>{card.desc}</p>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
+                        {/* Transparent Profile Image */}
+                        <motion.div
+                            className="profile-transparent-wrapper"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                        >
+                            <img
+                                src="/images/profile-transparent.png"
+                                alt={profileData.name}
+                                className="profile-transparent"
+                            />
+                        </motion.div>
+
+                        {/* Name Badge */}
+                        <motion.div
+                            className="profile-name-badge"
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 1.2 }}
+                        >
+                            <h3>{profileData.nickname}</h3>
+                            <p>{profileData.title}</p>
+                        </motion.div>
+
+                        {/* Floating Cards */}
+                        <div className="floating-cards">
+                            {floatingCards.map((card, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="floating-card"
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 1.3 + index * 0.2, duration: 0.5 }}
+                                >
+                                    <div className="floating-card-icon">
+                                        <card.icon size={18} />
+                                    </div>
+                                    <div className="floating-card-text">
+                                        <h4>{card.title}</h4>
+                                        <p>{card.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
                         </div>
                     </motion.div>
                 </div>

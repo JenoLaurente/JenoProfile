@@ -7,9 +7,9 @@ export const profileData = {
     roles: ["Full Stack Developer", "UI/UX Designer", "React Native Developer", "Problem Solver", "Tech Enthusiast"],
     email: "laurentejeno73@gmail.com",
     phone: "+63 947 343 0196",
-    location: "Caramoan, Camarines Sur, Philippines",
+    location: "Milaor, Camarines Sur, Philippines",
     bio: "Crafting digital experiences through innovative design and robust development. Passionate about creating solutions that bridge the gap between user needs and business objectives with clean, efficient code. I specialize in building modern web and mobile applications that deliver exceptional user experiences.",
-    tagline: "Available for Opportunities",
+    tagline: "Ready for work",
     summary: "A dedicated Full Stack Developer with 3+ years of experience in designing, developing, and deploying scalable web and mobile applications. Proven track record of delivering high-quality projects from concept to deployment. Strong expertise in React ecosystem, Node.js, and modern development practices.",
     interests: ["Web Development", "Mobile Apps", "UI/UX Design", "Open Source", "Learning New Technologies"],
     languages: ["English (Fluent)", "Filipino (Native)", "Bicol (Native)"],
@@ -21,7 +21,7 @@ export const profileData = {
         telegram: "https://t.me/JenoLaurente"
     },
     stats: {
-        yearsExperience: 3,
+        yearsExperience: 4,
         projectsCompleted: 15,
         deployedProjects: 2,
         technologies: 20,
@@ -118,11 +118,11 @@ export const projectsData = [
     },
     {
         id: "establishment",
-        title: "Establishment Profiling System",
+        title: "ACOTA",
         type: "Web App",
         status: "in-development",
         description: "A comprehensive web application for local business profiling and tourist accommodation booking in Caramoan. This ambitious project aims to digitize local business information and connect tourists with authentic local experiences. Development is currently paused due to budget constraints but will resume with proper funding.",
-        longDescription: "The Establishment Profiling System serves as a digital directory for all businesses in Caramoan, Philippines. It helps tourists discover local establishments, book accommodations, and plan their visits. For business owners, it provides a platform to showcase their services and manage bookings.",
+        longDescription: "The ACOTA serves as a digital directory for all businesses in Caramoan, Philippines. It helps tourists discover local establishments, book accommodations, and plan their visits. For business owners, it provides a platform to showcase their services and manage bookings.",
         image: "/images/Project2.png",
         technologies: ["Vue.js", "Vuetify", "Laravel", "MySQL", "RESTful API", "Google Maps API"],
         features: [
@@ -239,15 +239,29 @@ export const journeyData = [
     {
         year: "2026",
         title: "First Deployed Project",
-        description: "Successfully deployed Digistall - my first production application. A cross-platform mobile and web system for leasehold management. Secured funding through a pitch competition and launched at digi-stall.com. This milestone represents years of learning finally paying off.",
+        description: "Successfully deployed Digistall - my first production application. This is a funded start-up project that delivers a comprehensive cross-platform mobile and web system for leasehold management. Secured funding through a pitch competition and launched at digi-stall.com.",
         type: "milestone",
         icon: "rocket",
         achievements: [
+            "Funded Start-up Project",
             "Deployed first production application",
             "Secured project funding through pitch",
-            "Reached 90% completion milestone",
             "Implemented real-time features",
             "Managed end-to-end development"
+        ]
+    },
+    {
+        year: "Ongoing",
+        title: "Continuous Growth",
+        description: "The journey continues! I am deeply committed to lifelong learning, constantly gaining new experiences, and refining my craft. I'm always exploring new technologies and seeking challenges that help me grow as a developer.",
+        type: "skill",
+        icon: "book",
+        achievements: [
+            "Continuously Learning",
+            "Gaining New Experiences",
+            "Exploring Emerging Tech",
+            "Refining Development Skills",
+            "Open to New Challenges"
         ]
     }
 ];
@@ -328,6 +342,40 @@ export const certificationsData = [
         issuer: "freeCodeCamp",
         year: "2023",
         credentialUrl: "#"
+    }
+];
+
+// Hobbies & Interests Data
+export const hobbiesData = [
+    {
+        icon: "gamepad",
+        title: "Gaming",
+        description: "Online games enthusiast - both mobile and PC gaming"
+    },
+    {
+        icon: "crown",
+        title: "Chess",
+        description: "Strategic thinking through the classic game of chess"
+    },
+    {
+        icon: "music",
+        title: "Music",
+        description: "Old rock and punk music lover"
+    },
+    {
+        icon: "mountain",
+        title: "Nature Trips",
+        description: "Exploring the outdoors and connecting with nature"
+    },
+    {
+        icon: "book",
+        title: "Reading",
+        description: "Manga and Manhwa enthusiast"
+    },
+    {
+        icon: "film",
+        title: "Movies & Anime",
+        description: "Watching movies and anime in my downtime"
     }
 ];
 
