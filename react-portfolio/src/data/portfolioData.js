@@ -164,62 +164,20 @@ export const projectsData = [
     },
 ];
 
-// Expanded Journey/Roadmap Data
+// Expanded Journey/Roadmap Data - Chronological Order (oldest to newest)
 export const journeyData = [
     {
-        year: "2026",
-        title: "First Deployed Project",
-        description: "Successfully deployed Digistall - my first production application. A cross-platform mobile and web system for leasehold management. Secured funding through a pitch competition and launched at digi-stall.com. This milestone represents years of learning finally paying off.",
-        type: "milestone",
-        icon: "rocket",
+        year: "2022",
+        title: "Web Development Journey Begins",
+        description: "Started my journey into web development with HTML, CSS, and JavaScript. Discovered my passion for creating digital experiences and solving problems through code. This marked the beginning of an exciting career path.",
+        type: "education",
+        icon: "book",
         achievements: [
-            "Deployed first production application",
-            "Secured project funding through pitch",
-            "Reached 90% completion milestone",
-            "Implemented real-time features",
-            "Managed end-to-end development"
-        ]
-    },
-    {
-        year: "2025",
-        title: "React Native Mastery",
-        description: "Deep dive into mobile development with React Native. Built cross-platform applications with native performance and smooth animations. Learned to work with device APIs, push notifications, and app store deployment processes.",
-        type: "skill",
-        icon: "mobile",
-        achievements: [
-            "Built production-ready mobile apps",
-            "Mastered Expo and CLI workflows",
-            "Integrated native modules",
-            "Implemented push notifications",
-            "Published to app stores"
-        ]
-    },
-    {
-        year: "2024",
-        title: "Full Stack Development",
-        description: "Expanded expertise to backend technologies, becoming a true full-stack developer. Mastered Node.js, Express, Supabase, and various database systems. Learned to design RESTful APIs and implement real-time data synchronization.",
-        type: "skill",
-        icon: "server",
-        achievements: [
-            "Built scalable backend APIs",
-            "Database design and optimization",
-            "Real-time data handling with Supabase",
-            "Authentication and authorization",
-            "API security best practices"
-        ]
-    },
-    {
-        year: "2023",
-        title: "Vue.js & Enterprise Apps",
-        description: "Started building enterprise-level applications with Vue.js and Vuetify. Developed the Establishment Profiling System for local government use. Learned state management patterns and component-based architecture at scale.",
-        type: "project",
-        icon: "code",
-        achievements: [
-            "Vue.js ecosystem mastery",
-            "Component-based architecture",
-            "Vuex state management",
-            "Enterprise application development",
-            "Government project collaboration"
+            "HTML5 & CSS3 foundations",
+            "JavaScript ES6+ proficiency",
+            "Responsive design principles",
+            "Git version control basics",
+            "First portfolio website created"
         ]
     },
     {
@@ -237,17 +195,59 @@ export const journeyData = [
         ]
     },
     {
-        year: "2022",
-        title: "Web Development Journey Begins",
-        description: "Started my journey into web development with HTML, CSS, and JavaScript. Discovered my passion for creating digital experiences and solving problems through code. This marked the beginning of an exciting career path.",
-        type: "education",
-        icon: "book",
+        year: "2023",
+        title: "Vue.js & Enterprise Apps",
+        description: "Started building enterprise-level applications with Vue.js and Vuetify. Developed the Establishment Profiling System for local government use. Learned state management patterns and component-based architecture at scale.",
+        type: "project",
+        icon: "code",
         achievements: [
-            "HTML5 & CSS3 foundations",
-            "JavaScript ES6+ proficiency",
-            "Responsive design principles",
-            "Git version control basics",
-            "First portfolio website created"
+            "Vue.js ecosystem mastery",
+            "Component-based architecture",
+            "Vuex state management",
+            "Enterprise application development",
+            "Government project collaboration"
+        ]
+    },
+    {
+        year: "2024",
+        title: "Full Stack Development",
+        description: "Expanded expertise to backend technologies, becoming a true full-stack developer. Mastered Node.js, Express, Supabase, and various database systems. Learned to design RESTful APIs and implement real-time data synchronization.",
+        type: "skill",
+        icon: "server",
+        achievements: [
+            "Built scalable backend APIs",
+            "Database design and optimization",
+            "Real-time data handling with Supabase",
+            "Authentication and authorization",
+            "API security best practices"
+        ]
+    },
+    {
+        year: "2025",
+        title: "React Native Mastery",
+        description: "Deep dive into mobile development with React Native. Built cross-platform applications with native performance and smooth animations. Learned to work with device APIs, push notifications, and app store deployment processes.",
+        type: "skill",
+        icon: "mobile",
+        achievements: [
+            "Built production-ready mobile apps",
+            "Mastered Expo and CLI workflows",
+            "Integrated native modules",
+            "Implemented push notifications",
+            "Published to app stores"
+        ]
+    },
+    {
+        year: "2026",
+        title: "First Deployed Project",
+        description: "Successfully deployed Digistall - my first production application. A cross-platform mobile and web system for leasehold management. Secured funding through a pitch competition and launched at digi-stall.com. This milestone represents years of learning finally paying off.",
+        type: "milestone",
+        icon: "rocket",
+        achievements: [
+            "Deployed first production application",
+            "Secured project funding through pitch",
+            "Reached 90% completion milestone",
+            "Implemented real-time features",
+            "Managed end-to-end development"
         ]
     }
 ];
