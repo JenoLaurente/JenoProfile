@@ -17,7 +17,7 @@ export const profileData = {
     socialLinks: {
         github: "https://github.com/JenoPro",
         linkedin: "https://www.linkedin.com/in/jeno-aldrei-laurente-50038a287",
-        facebook: "https://www.facebook.com/share/1BjxABqxMN/",
+        facebook: "https://www.facebook.com/profile.php?id=61587077348977",
         telegram: "https://t.me/JenoLaurente"
     },
     stats: {
