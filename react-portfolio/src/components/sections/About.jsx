@@ -63,44 +63,32 @@ const About = () => {
                     <motion.div className="about-intro" variants={itemVariants}>
                         <h3>Building the Future, One Line of Code at a Time</h3>
                         <p>
-                            I'm a passionate Full Stack Developer and UI/UX Designer with over{' '}
-                            {profileData.stats.yearsExperience} years of experience creating innovative digital
+                            I'm a passionate Full Stack Developer and UI/UX Designer creating innovative digital
                             solutions. My journey in technology started with a curiosity about how things work,
                             and it has evolved into a deep passion for crafting exceptional user experiences.
                         </p>
                         <p>
                             I believe in the power of clean code, thoughtful design, and user-centered development.
-                            Every project is an opportunity to push boundaries and create something remarkable that
-                            makes a real impact.
+                            Whether it's building scalable web applications, mobile apps, or leveraging no-code
+                            automation tools like GoHighLevel for business workflows — every project is an
+                            opportunity to push boundaries and create something remarkable.
                         </p>
 
-                        {/* Stats */}
-                        <div className="about-stats">
-                            <motion.div
-                                className="about-stat-item"
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.05, y: -5 }}
-                            >
-                                <div className="about-stat-number">{profileData.stats.projectsCompleted}+</div>
-                                <p className="about-stat-label">Projects Completed</p>
-                            </motion.div>
-                            <motion.div
-                                className="about-stat-item"
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.05, y: -5 }}
-                            >
-                                <div className="about-stat-number">{profileData.stats.yearsExperience}+</div>
-                                <p className="about-stat-label">Years Experience</p>
-                            </motion.div>
-                            <motion.div
-                                className="about-stat-item"
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.05, y: -5 }}
-                            >
-                                <div className="about-stat-number">{profileData.stats.technologies}+</div>
-                                <p className="about-stat-label">Technologies</p>
-                            </motion.div>
-                        </div>
+                        {/* Startup Highlight */}
+                        <motion.div
+                            className="startup-highlight"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3, duration: 0.5 }}
+                        >
+                            <div className="highlight-badge">🚀 Startup Founder</div>
+                            <h4>Selected by Naga City Government</h4>
+                            <p>
+                                Our team was recognized and selected as Startup Founders for <strong>Digistall</strong> —
+                                a comprehensive leasehold management system now deployed and serving real users.
+                            </p>
+                        </motion.div>
                     </motion.div>
 
                     {/* Right Column - Top 2 Expertise Cards */}

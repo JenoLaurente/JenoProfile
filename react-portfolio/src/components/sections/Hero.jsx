@@ -184,24 +184,34 @@ const Hero = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        {/* Project Screenshots Background */}
+                        {/* Project Screenshots Background - Clickable */}
                         <div className="project-showcase">
-                            <motion.div
+                            <motion.a
+                                href="http://digi-stall.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="project-screenshot project-1"
                                 initial={{ opacity: 0, x: 50, rotate: 5 }}
                                 animate={{ opacity: 1, x: 0, rotate: 8 }}
                                 transition={{ duration: 0.8, delay: 0.8 }}
+                                whileHover={{ scale: 1.05, zIndex: 10 }}
+                                title="View Digistall Live Demo"
                             >
                                 <img src="/images/Digistall.png" alt="Digistall Project" />
-                            </motion.div>
-                            <motion.div
+                            </motion.a>
+                            <motion.a
+                                href="https://tcw-final-project.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="project-screenshot project-2"
                                 initial={{ opacity: 0, x: 80, rotate: -5 }}
                                 animate={{ opacity: 1, x: 0, rotate: -5 }}
                                 transition={{ duration: 0.8, delay: 1 }}
+                                whileHover={{ scale: 1.05, zIndex: 10 }}
+                                title="View Dubai Cultural Journey Live Demo"
                             >
                                 <img src="/images/Dubai.png" alt="Dubai Project" />
-                            </motion.div>
+                            </motion.a>
                         </div>
 
                         {/* Transparent Profile Image */}

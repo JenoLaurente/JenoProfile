@@ -64,7 +64,8 @@ export const skillsData = {
         { name: "Git", icon: "git", level: 90, color: "#f05032" },
         { name: "Figma", icon: "figma", level: 85, color: "#f24e1e" },
         { name: "VS Code", icon: "vscode", level: 95, color: "#007acc" },
-        { name: "Docker", icon: "docker", level: 65, color: "#2496ed" }
+        { name: "Docker", icon: "docker", level: 65, color: "#2496ed" },
+        { name: "GoHighLevel", icon: "ghl", level: 50, color: "#00bf63" }
     ]
 };
 
@@ -75,7 +76,7 @@ export const projectsData = [
         title: "Digistall",
         type: "Mobile App, Web App",
         status: "deployed",
-        description: "My first deployed project! A comprehensive cross-platform mobile and web system for leasehold management in public markets. Features include real-time stall tracking, payment processing, admin dashboard, leaseholder portal, and automated notifications. Successfully funded through a pitch competition and deployed at digi-stall.com.",
+        description: "My first deployed project! A comprehensive cross-platform mobile and web system for leasehold management in public markets. Our team was selected as Startup Founders by the Naga City Government. Features include real-time stall tracking, payment processing, admin dashboard, leaseholder portal, and automated notifications. Successfully funded through a pitch competition and deployed at digi-stall.com.",
         longDescription: "Digistall revolutionizes how public market stall rentals are managed. The system provides a complete solution for market administrators to manage stall assignments, track payments, send notifications, and generate reports. Leaseholders can view their stall status, make payments, and communicate with administrators through the mobile app.",
         image: "/images/Digistall.png",
         technologies: ["React Native", "Node.js", "Supabase", "PostgreSQL", "Expo", "Express.js"],
@@ -90,7 +91,7 @@ export const projectsData = [
         liveUrl: "http://digi-stall.com/",
         featured: true,
         completionPercentage: 90,
-        role: "Lead Developer",
+        role: "Lead Developer & Co-Founder",
         duration: "8 months"
     },
     {
@@ -238,14 +239,14 @@ export const journeyData = [
     },
     {
         year: "2026",
-        title: "First Deployed Project",
-        description: "Successfully deployed Digistall - my first production application. This is a funded start-up project that delivers a comprehensive cross-platform mobile and web system for leasehold management. Secured funding through a pitch competition and launched at digi-stall.com.",
+        title: "First Deployed Project & Startup Founder",
+        description: "Successfully deployed Digistall - my first production application. Our team was selected as Startup Founders by the Naga City Government. This funded start-up delivers a comprehensive cross-platform mobile and web system for leasehold management. Secured funding through a pitch competition and launched at digi-stall.com.",
         type: "milestone",
         icon: "rocket",
         achievements: [
-            "Funded Start-up Project",
+            "Selected as Startup Founder by Naga City Government",
             "Deployed first production application",
-            "Secured project funding through pitch",
+            "Secured project funding through pitch competition",
             "Implemented real-time features",
             "Managed end-to-end development"
         ]
@@ -283,13 +284,13 @@ export const expertiseData = [
     {
         icon: "server",
         title: "Backend Development",
-        description: "Building robust, scalable server-side applications. I design efficient APIs and implement secure authentication systems that can handle growth.",
-        technologies: ["Node.js", "Express", "Laravel", "PostgreSQL", "MongoDB", "Supabase"],
+        description: "Building robust, scalable server-side applications and automation workflows. I design efficient APIs, implement secure authentication systems, and leverage no-code platforms like GoHighLevel for rapid business automation.",
+        technologies: ["Node.js", "Express", "Laravel", "Supabase", "GoHighLevel", "No-Code Automation"],
         highlights: [
             "RESTful API Design",
             "Database Optimization",
             "Authentication & Security",
-            "Real-time Data Handling"
+            "No-Code/Low-Code Automation"
         ]
     },
     {

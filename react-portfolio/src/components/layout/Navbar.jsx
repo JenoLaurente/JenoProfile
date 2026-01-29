@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, User, Code, Mail, Menu, X } from 'lucide-react';
+import { Home, User, Code, Mail, Menu, X, Download } from 'lucide-react';
 import { profileData } from '../../data/portfolioData';
 
 const navItems = [
@@ -46,6 +46,11 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
     };
 
+    const handleDownloadCV = () => {
+        // Open CV in new tab - user can save as PDF
+        window.open('/Jeno_Aldrei_Laurente_CV.html', '_blank');
+    };
+
     return (
         <>
             <motion.nav
@@ -80,6 +85,12 @@ const Navbar = () => {
                         ))}
                     </ul>
 
+                    {/* Download CV Button */}
+                    <button className="cv-download-btn" onClick={handleDownloadCV}>
+                        <Download size={18} />
+                        <span>Download CV</span>
+                    </button>
+
                     {/* Mobile Toggle */}
                     <button
                         className="mobile-toggle"
@@ -107,6 +118,17 @@ const Navbar = () => {
                             </a>
                         </motion.li>
                     ))}
+                    {/* Mobile Download CV Button */}
+                    <motion.li
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ delay: navItems.length * 0.1 }}
+                    >
+                        <button className="mobile-cv-btn" onClick={handleDownloadCV}>
+                            <Download size={24} />
+                            Download CV
+                        </button>
+                    </motion.li>
                 </ul>
             </div>
         </>
