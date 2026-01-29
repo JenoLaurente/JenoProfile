@@ -69,10 +69,10 @@ function App() {
             {/* Main Content */}
             <main>
               <Hero />
+              <Projects />
+              <Skills />
               <About />
               <Hobbies />
-              <Skills />
-              <Projects />
               <Journey />
               <Contact />
             </main>
