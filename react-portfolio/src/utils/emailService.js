@@ -124,7 +124,7 @@ export const sendEmail = async (formData) => {
         from_name: name,
         from_email: email,
         subject: subject,
-        to_email: 'laurentejeno73@gmail.com',
+        to_email: 'jenoaldrei.official@gmail.com',
         reply_to: email,
         date: currentDate,
     };
@@ -141,11 +141,11 @@ export const sendEmail = async (formData) => {
         to_name: name,
         to_email: email,
         from_name: 'Jeno Aldrei Laurente',
-        from_email: 'laurentejeno73@gmail.com',
+        from_email: 'jenoaldrei.official@gmail.com',
         subject: subject,
         original_message: message,
         date: currentDate,
-        reply_to: 'laurentejeno73@gmail.com',
+        reply_to: 'jenoaldrei.official@gmail.com',
     };
 
     try {

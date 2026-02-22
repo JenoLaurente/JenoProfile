@@ -5,7 +5,7 @@ export const profileData = {
     initials: "JA",
     title: "Full Stack Developer",
     roles: ["Full Stack Developer", "UI/UX Designer", "React Native Developer", "Problem Solver", "Tech Enthusiast"],
-    email: "laurentejeno73@gmail.com",
+    email: "jenoaldrei.official@gmail.com",
     phone: "+63 947 343 0196",
     location: "Milaor, Camarines Sur, Philippines",
     bio: "Crafting digital experiences through innovative design and robust development. Passionate about creating solutions that bridge the gap between user needs and business objectives with clean, efficient code. I specialize in building modern web and mobile applications that deliver exceptional user experiences.",

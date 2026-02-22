@@ -134,7 +134,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 ## 🤝 Connect With Me
 
-- **Email**: [laurentejeno73@gmail.com](mailto:laurentejeno73@gmail.com)
+- **Email**: [jenoaldrei.official@gmail.com](mailto:jenoaldrei.official@gmail.com)
 - **LinkedIn**: [Jeno Aldrei Laurente](https://www.linkedin.com/in/jeno-aldrei-laurente-50038a287)
 - **GitHub**: [@JenoPro](https://github.com/JenoPro)
 - **Facebook**: [Profile](https://www.facebook.com/share/1BjxABqxMN/)
