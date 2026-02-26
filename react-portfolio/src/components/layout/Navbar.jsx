@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Home, User, Code, Mail, Menu, X, Download } from 'lucide-react';
+import { Home, User, Code, Mail, Menu, X, Download, ChevronDown } from 'lucide-react';
 import { profileData } from '../../data/portfolioData';
+import { CVOptions, openCVInNewTab } from '../../utils/cvService';
 
 const navItems = [
     { name: 'Home', href: '#home', icon: Home },
@@ -14,6 +15,8 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
+    const [isCVDropdownOpen, setIsCVDropdownOpen] = useState(false);
+    const cvDropdownRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,6 +40,20 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Close CV dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (cvDropdownRef.current && !cvDropdownRef.current.contains(event.target)) {
+                setIsCVDropdownOpen(false);
+            }
+        };
+
+        if (isCVDropdownOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [isCVDropdownOpen]);
+
     const handleNavClick = (e, href) => {
         e.preventDefault();
         const target = document.querySelector(href);
@@ -46,9 +63,9 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
     };
 
-    const handleDownloadCV = () => {
-        // Open CV in new tab - user can save as PDF
-        window.open('/Jeno_Aldrei_Laurente_CV.html', '_blank');
+    const handleCVSelect = (cvType) => {
+        openCVInNewTab(cvType);
+        setIsCVDropdownOpen(false);
     };
 
     return (
@@ -85,11 +102,40 @@ const Navbar = () => {
                         ))}
                     </ul>
 
-                    {/* Download CV Button */}
-                    <button className="cv-download-btn" onClick={handleDownloadCV}>
-                        <Download size={18} />
-                        <span>Download CV</span>
-                    </button>
+                    {/* Download CV Dropdown */}
+                    <div className="cv-dropdown" ref={cvDropdownRef}>
+                        <button 
+                            className="cv-download-btn"
+                            onClick={() => setIsCVDropdownOpen(!isCVDropdownOpen)}
+                        >
+                            <Download size={18} />
+                            <span>Download CV</span>
+                            <ChevronDown size={16} className={`dropdown-icon ${isCVDropdownOpen ? 'open' : ''}`} />
+                        </button>
+
+                        {isCVDropdownOpen && (
+                            <motion.div 
+                                className="cv-dropdown-menu"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <button 
+                                    className="cv-dropdown-item"
+                                    onClick={() => handleCVSelect('TECHNICAL')}
+                                >
+                                    <span>Technical CV</span>
+                                </button>
+                                <button 
+                                    className="cv-dropdown-item"
+                                    onClick={() => handleCVSelect('GENERAL')}
+                                >
+                                    <span>General CV</span>
+                                </button>
+                            </motion.div>
+                        )}
+                    </div>
 
                     {/* Mobile Toggle */}
                     <button
@@ -118,16 +164,46 @@ const Navbar = () => {
                             </a>
                         </motion.li>
                     ))}
-                    {/* Mobile Download CV Button */}
+                    {/* Mobile Download CV Dropdown */}
                     <motion.li
                         initial={{ opacity: 0, y: 20 }}
                         animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ delay: navItems.length * 0.1 }}
                     >
-                        <button className="mobile-cv-btn" onClick={handleDownloadCV}>
-                            <Download size={24} />
-                            Download CV
-                        </button>
+                        <div className="mobile-cv-menu">
+                            <button 
+                                className="mobile-cv-btn"
+                                onClick={() => setIsCVDropdownOpen(!isCVDropdownOpen)}
+                            >
+                                <Download size={24} />
+                                Download CV
+                                <ChevronDown size={18} className={`dropdown-icon ${isCVDropdownOpen ? 'open' : ''}`} />
+                            </button>
+                            {isCVDropdownOpen && (
+                                <motion.div 
+                                    className="mobile-cv-dropdown-menu"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <button 
+                                        className="mobile-cv-dropdown-item"
+                                        onClick={() => handleCVSelect('TECHNICAL')}
+                                    >
+                                        <span>Technical CV</span>
+                                        <span className="cv-description">For Tech Roles</span>
+                                    </button>
+                                    <button 
+                                        className="mobile-cv-dropdown-item"
+                                        onClick={() => handleCVSelect('GENERAL')}
+                                    >
+                                        <span>General CV</span>
+                                        <span className="cv-description">For Call Center / Teaching</span>
+                                    </button>
+                                </motion.div>
+                            )}
+                        </div>
                     </motion.li>
                 </ul>
             </div>
