@@ -362,14 +362,42 @@
             color: #444;
         }
 
-        /* Print Styles */
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s, background 0.2s;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            background: #333;
+        }
+
         @media print {
             body {
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
 
+            .download-btn {
+                display: none !important;
+            }
+
             .cv-container {
+
                 width: 210mm;
                 min-height: 297mm;
             }
@@ -738,5 +766,15 @@
             </aside>
         </div>
     </div>
+
+    <!-- Download PDF Button -->
+    <a href="Jeno_Aldrei_Laurente_Technical_CV.pdf" download class="download-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF
+    </a>
 </body>
 </html>

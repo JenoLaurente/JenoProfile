@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,19 +13,19 @@ const __dirname = path.dirname(__filename);
         
         const filesToConvert = [
             {
-                input: path.join(__dirname, 'public', 'Jeno_Aldrei_Laurente_CV.html'),
-                output: path.join(__dirname, 'public', 'Jeno_Aldrei_Laurente_Technical_CV.pdf')
+                input: path.join(__dirname, '..', 'public', 'Jeno_Aldrei_Laurente_CV.html'),
+                output: path.join(__dirname, '..', 'public', 'Jeno_Aldrei_Laurente_Technical_CV.pdf')
             },
             {
-                input: path.join(__dirname, 'public', 'Jeno_Aldrei_Laurente_General_CV.html'),
-                output: path.join(__dirname, 'public', 'Jeno_Aldrei_Laurente_General_CV.pdf')
+                input: path.join(__dirname, '..', 'public', 'Jeno_Aldrei_Laurente_General_CV.html'),
+                output: path.join(__dirname, '..', 'public', 'Jeno_Aldrei_Laurente_General_CV.pdf')
             }
         ];
 
         for (const file of filesToConvert) {
             console.log(`Converting ${path.basename(file.input)} to PDF...`);
             // We use file:// protocol to load the local html files
-            await page.goto(`file://${file.input}`, { waitUntil: 'networkidle0' });
+            await page.goto(pathToFileURL(file.input).href, { waitUntil: 'networkidle0' });
             
             // Generate PDF from the page
             await page.pdf({
