@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Github, ExternalLink, Clock, Folder, ArrowRight } from 'lucide-react';
+import { Github, ExternalLink, Clock, Folder, ArrowRight, Lock } from 'lucide-react';
 import { projectsData } from '../../data/portfolioData';
 
 const Projects = () => {
@@ -86,8 +86,8 @@ const Projects = () => {
                             <div className="project-info">
                                 <div className="project-meta">
                                     <span className="project-type">{project.type}</span>
-                                    <span className={`project-status ${project.status}`}>
-                                        {project.status === 'deployed' ? 'Live' : 'In Progress'}
+                                    <span className={`project-status ${project.status} ${project.privateWork ? 'private' : ''}`}>
+                                        {project.statusLabel || (project.status === 'deployed' ? 'Live' : 'In Progress')}
                                     </span>
                                 </div>
 
@@ -129,6 +129,11 @@ const Projects = () => {
                                             <span>Live Demo</span>
                                             <ArrowRight size={16} />
                                         </motion.a>
+                                    ) : project.privateWork ? (
+                                        <span className="project-link disabled private">
+                                            <Lock size={18} />
+                                            <span>Private Client Work</span>
+                                        </span>
                                     ) : (
                                         <span className="project-link disabled">
                                             <Clock size={18} />

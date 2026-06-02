@@ -22,8 +22,8 @@ export const profileData = {
     },
     stats: {
         yearsExperience: 4,
-        projectsCompleted: 15,
-        deployedProjects: 2,
+        projectsCompleted: 18,
+        deployedProjects: 3,
         technologies: 20,
         gitCommits: 500,
         linesOfCode: 50000
@@ -64,8 +64,7 @@ export const skillsData = {
         { name: "Git", icon: "git", level: 90, color: "#f05032" },
         { name: "Figma", icon: "figma", level: 85, color: "#f24e1e" },
         { name: "VS Code", icon: "vscode", level: 95, color: "#007acc" },
-        { name: "Docker", icon: "docker", level: 65, color: "#2496ed" },
-        { name: "GoHighLevel", icon: "ghl", level: 50, color: "#00bf63" }
+        { name: "Docker", icon: "docker", level: 65, color: "#2496ed" }
     ]
 };
 
@@ -162,6 +161,81 @@ export const projectsData = [
         completionPercentage: 35,
         role: "Full Stack Developer",
         duration: "Ongoing"
+    },
+    {
+        id: "confidential-client-mobile-app",
+        title: "Confidential Client Mobile App",
+        type: "Mobile App",
+        status: "private",
+        statusLabel: "Deployed (Private)",
+        description: "A confidential client mobile application now deployed and serving around 50 users. Public links and source code are not shared based on client preference.",
+        longDescription: "Built and delivered a private mobile app for a client workflow, including production deployment and ongoing iteration. The app is already used in real operations with around 50 active users.",
+        image: "/images/Project3.png",
+        technologies: ["React Native", "Expo", "Node.js", "Supabase", "PostgreSQL"],
+        features: [
+            "Production-ready mobile release",
+            "Real-time data synchronization",
+            "Role-based user access",
+            "Feedback-driven feature updates",
+            "Stable usage by 50 active users"
+        ],
+        github: null,
+        liveUrl: null,
+        privateWork: true,
+        featured: true,
+        completionPercentage: 100,
+        role: "Mobile App Developer",
+        duration: "Client Project"
+    },
+    {
+        id: "confidential-figma-design-system",
+        title: "Confidential Figma Design - Product System",
+        type: "UI/UX Design",
+        status: "private",
+        statusLabel: "Completed (Private)",
+        description: "A private Figma design project for a client product interface, including wireframes, high-fidelity screens, and reusable design components.",
+        longDescription: "Designed a full UI system in Figma for a client-facing product, from user flow mapping to polished screen designs and handoff-ready components.",
+        image: "/images/Dubai.png",
+        technologies: ["Figma", "Design System", "Wireframing", "Prototyping", "UX Flow"],
+        features: [
+            "End-to-end user flow design",
+            "Reusable component library",
+            "High-fidelity desktop/mobile layouts",
+            "Interactive click-through prototypes",
+            "Developer handoff notes"
+        ],
+        github: null,
+        liveUrl: null,
+        privateWork: true,
+        featured: true,
+        completionPercentage: 100,
+        role: "UI/UX Designer",
+        duration: "Client Project"
+    },
+    {
+        id: "confidential-figma-booking-design",
+        title: "Confidential Figma Design - Booking Experience",
+        type: "UI/UX Design",
+        status: "private",
+        statusLabel: "Completed (Private)",
+        description: "A confidential Figma design project focused on a smoother booking flow and clearer conversion path. Shared publicly as private client work only.",
+        longDescription: "Created and refined booking journey screens in Figma with emphasis on clarity, trust signals, and faster task completion across mobile and desktop breakpoints.",
+        image: "/images/Project2.png",
+        technologies: ["Figma", "User Journey Mapping", "Prototyping", "Design QA", "UX Writing"],
+        features: [
+            "Optimized booking funnel screens",
+            "Mobile-first interaction patterns",
+            "Accessibility-aware spacing and hierarchy",
+            "Annotated prototype for collaboration",
+            "Structured handoff for frontend implementation"
+        ],
+        github: null,
+        liveUrl: null,
+        privateWork: true,
+        featured: true,
+        completionPercentage: 100,
+        role: "UI/UX Designer",
+        duration: "Client Project"
     },
 ];
 
@@ -284,8 +358,8 @@ export const expertiseData = [
     {
         icon: "server",
         title: "Backend Development",
-        description: "Building robust, scalable server-side applications and automation workflows. I design efficient APIs, implement secure authentication systems, and leverage no-code platforms like GoHighLevel for rapid business automation.",
-        technologies: ["Node.js", "Express", "Laravel", "Supabase", "GoHighLevel", "No-Code Automation"],
+        description: "Building robust, scalable server-side applications and automation workflows. I design efficient APIs and implement secure authentication systems.",
+        technologies: ["Node.js", "Express", "Laravel", "Supabase"],
         highlights: [
             "RESTful API Design",
             "Database Optimization",

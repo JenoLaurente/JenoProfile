@@ -69,8 +69,7 @@ const About = () => {
                         </p>
                         <p>
                             I believe in the power of clean code, thoughtful design, and user-centered development.
-                            Whether it's building scalable web applications, mobile apps, or leveraging no-code
-                            automation tools like GoHighLevel for business workflows — every project is an
+                            Whether it's building scalable web applications, mobile apps, or backend APIs — every project is an
                             opportunity to push boundaries and create something remarkable.
                         </p>
 

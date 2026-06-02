@@ -1196,6 +1196,10 @@
     color: var(--text-tertiary);
 }
 
+.project-status.private {
+    color: var(--text-secondary);
+}
+
 .project-title {
     font-family: var(--font-display);
     font-size: 2rem;
@@ -1266,6 +1270,11 @@
 .project-link.disabled {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+.project-link.disabled.private {
+    opacity: 0.75;
+    border-style: dashed;
 }
 
 .project-number {
