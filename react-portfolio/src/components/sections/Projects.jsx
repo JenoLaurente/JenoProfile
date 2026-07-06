@@ -86,9 +86,11 @@ const Projects = () => {
                             <div className="project-info">
                                 <div className="project-meta">
                                     <span className="project-type">{project.type}</span>
-                                    <span className={`project-status ${project.status} ${project.privateWork ? 'private' : ''}`}>
-                                        {project.statusLabel || (project.status === 'deployed' ? 'Live' : 'In Progress')}
-                                    </span>
+                                    {project.statusLabel && (
+                                        <span className={`project-status ${project.status} ${project.privateWork ? 'private' : ''}`}>
+                                            {project.statusLabel}
+                                        </span>
+                                    )}
                                 </div>
 
                                 <h3 className="project-title">{project.title}</h3>
@@ -116,7 +118,7 @@ const Projects = () => {
                                             <span>Source</span>
                                         </motion.a>
                                     )}
-                                    {project.liveUrl ? (
+                                    {project.liveUrl && (
                                         <motion.a
                                             href={project.liveUrl}
                                             target="_blank"
@@ -129,15 +131,11 @@ const Projects = () => {
                                             <span>Live Demo</span>
                                             <ArrowRight size={16} />
                                         </motion.a>
-                                    ) : project.privateWork ? (
+                                    )}
+                                    {!project.liveUrl && project.privateWork && (
                                         <span className="project-link disabled private">
                                             <Lock size={18} />
                                             <span>Private Client Work</span>
-                                        </span>
-                                    ) : (
-                                        <span className="project-link disabled">
-                                            <Clock size={18} />
-                                            <span>Coming Soon</span>
                                         </span>
                                     )}
                                 </div>

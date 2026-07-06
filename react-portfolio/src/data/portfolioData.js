@@ -72,171 +72,93 @@ export const skillsData = {
 export const projectsData = [
     {
         id: "digistall",
-        title: "Digistall",
+        title: "Digistall - Leasehold Management System",
         type: "Mobile App, Web App",
         status: "deployed",
-        description: "My first deployed project! A comprehensive cross-platform mobile and web system for leasehold management in public markets. Our team was selected as Startup Founders by the Naga City Government. Features include real-time stall tracking, payment processing, admin dashboard, leaseholder portal, and automated notifications. Successfully funded through a pitch competition and deployed at digi-stall.com.",
-        longDescription: "Digistall revolutionizes how public market stall rentals are managed. The system provides a complete solution for market administrators to manage stall assignments, track payments, send notifications, and generate reports. Leaseholders can view their stall status, make payments, and communicate with administrators through the mobile app.",
+        description: "Led development of a comprehensive cross-platform mobile and web system for public market leasehold management. Our team was selected as Startup Founders by the Naga City Government. Secured funding through a pitch competition. Successfully deployed with real-time stall tracking, payment processing, and automated notifications.",
+        longDescription: "Led development of a comprehensive cross-platform mobile and web system for public market leasehold management. Our team was selected as Startup Founders by the Naga City Government. Secured funding through a pitch competition. Successfully deployed with real-time stall tracking, payment processing, and automated notifications.",
         image: "/images/Digistall.png",
-        technologies: ["React Native", "Node.js", "Supabase", "PostgreSQL", "Expo", "Express.js"],
+        technologies: ["React Native", "Node.js", "Supabase", "PostgreSQL", "Expo"],
         features: [
             "Real-time stall availability tracking",
             "Secure payment integration",
             "Push notification system",
             "Admin analytics dashboard",
-            "Multi-platform support (iOS, Android, Web)"
+            "Multi-platform support"
         ],
-        github: "https://github.com/JenoPro/Naga-Stall.git",
-        liveUrl: "http://digi-stall.com/",
+        github: null,
+        liveUrl: null,
         featured: true,
-        completionPercentage: 90,
+        completionPercentage: 100,
         role: "Lead Developer & Co-Founder",
-        duration: "8 months"
+        duration: "2025 - 2026"
+    },
+    {
+        id: "kusinakonek",
+        title: "KusinaKonek",
+        type: "Mobile App",
+        status: "deployed",
+        description: "KusinaKonek is a community-driven food redistribution mobile application that bridges the gap between food donors and recipients in need, reducing food waste and fighting hunger.",
+        longDescription: "KusinaKonek (from Filipino — Kusina \"kitchen\" + Konek \"connect\") is a community-driven food redistribution mobile application. Its primary purpose is to bridge the gap between food donors (such as households, organizations, or restaurants) and recipients in need, reducing food waste and fighting hunger. The codebase manages the entire lifecycle of a food donation: Donors can list surplus food, drop pins on an interactive map for pickup, and track claims. Recipients can browse food nearby, add items to a cart (reserving them for 15 minutes), navigate to the location, and provide feedback upon receipt. Administrators/System Processes handle automated claim timeouts, food expiry, and user bans for unfulfilled claims.",
+        image: "/images/KUSINAKONEK-NEW-LOGO.png",
+        technologies: ["React Native (TSX)", "Express.js", "Supabase", "Expo"],
+        features: [
+            "Food sharing platform",
+            "Interactive map for pickup",
+            "Claim tracking and automated timeouts",
+            "Beta testing on PlayStore"
+        ],
+        github: null,
+        liveUrl: null,
+        featured: true,
+        completionPercentage: 95,
+        role: "Full Stack Developer",
+        duration: "2026"
     },
     {
         id: "dubai-cultural-journey",
         title: "Dubai: A Cultural Journey",
         type: "Landing Page",
         status: "deployed",
-        description: "An immersive digital e-Portfolio showcasing Dubai's rich cultural heritage and futuristic innovation. Features stunning 3D elements with Spline, parallax scrolling, smooth animations, and a modern responsive design. Created as a final project demonstrating advanced frontend skills.",
-        longDescription: "Discover Dubai - Where Heritage Meets Future. This interactive landing page takes visitors on an immersive journey through the cultural tapestry of Dubai — a city where ancient traditions dance with futuristic innovation. The project showcases advanced web technologies including 3D graphics, smooth scrolling effects, and beautiful typography.",
+        description: "Created an immersive digital e-Portfolio showcasing Dubai's cultural heritage featuring stunning 3D elements with Spline, parallax scrolling, and smooth animations.",
+        longDescription: "Created an immersive digital e-Portfolio showcasing Dubai's cultural heritage featuring stunning 3D elements with Spline, parallax scrolling, and smooth animations. Created as a final project demonstrating advanced frontend skills.",
         image: "/images/Dubai.png",
-        technologies: ["HTML5", "CSS3", "JavaScript", "Spline 3D", "Font Awesome", "Responsive Design"],
+        technologies: ["HTML5", "CSS3", "JavaScript", "Spline 3D"],
         features: [
             "Stunning 3D elements with Spline viewer",
             "Parallax scrolling effects",
-            "Smooth section transitions",
-            "Cultural content exploration",
-            "Fully responsive design"
+            "Smooth animations",
+            "Immersive digital e-Portfolio"
         ],
-        github: "https://github.com/JenoPro/tcw-final-project",
-        liveUrl: "https://tcw-final-project.vercel.app/",
+        github: null,
+        liveUrl: null,
         featured: true,
         completionPercentage: 100,
         role: "Frontend Developer",
-        duration: "2 weeks"
+        duration: "2025"
     },
     {
-        id: "establishment",
-        title: "ACOTA",
+        id: "acota",
+        title: "ACOTA - Business Profiling System",
         type: "Web App",
         status: "in-development",
-        description: "A comprehensive web application for local business profiling and tourist accommodation booking in Caramoan. This ambitious project aims to digitize local business information and connect tourists with authentic local experiences. Development is currently paused due to budget constraints but will resume with proper funding.",
-        longDescription: "The ACOTA serves as a digital directory for all businesses in Caramoan, Philippines. It helps tourists discover local establishments, book accommodations, and plan their visits. For business owners, it provides a platform to showcase their services and manage bookings.",
+        description: "Developing a comprehensive web application for local business profiling and tourist accommodation booking in Caramoan for local government use.",
+        longDescription: "Developing a comprehensive web application for local business profiling and tourist accommodation booking in Caramoan for local government use. Features interactive map integration and booking system.",
         image: "/images/Project2.png",
-        technologies: ["Vue.js", "Vuetify", "Laravel", "MySQL", "RESTful API", "Google Maps API"],
+        technologies: ["Vue.js", "Vuetify", "Laravel", "MySQL"],
         features: [
-            "Business directory with search and filters",
-            "Online booking system",
+            "Business profiling",
+            "Tourist accommodation booking",
             "Interactive map integration",
-            "Review and rating system",
-            "Business analytics dashboard"
+            "Local government use"
         ],
-        github: "https://github.com/VNZray/frontend.git",
+        github: null,
         liveUrl: null,
         featured: true,
-        completionPercentage: 45,
+        completionPercentage: 70,
         role: "Frontend Developer",
-        duration: "Ongoing"
-    },
-    {
-        id: "enrollease",
-        title: "EnrollEase",
-        type: "Desktop App",
-        status: "in-development",
-        description: "A Java-based student enrollment system designed for educational institutions. Features centralized course management, automated scheduling, student record management, and comprehensive admin dashboard. Built with scalability in mind to handle thousands of students.",
-        longDescription: "EnrollEase streamlines the entire enrollment process for educational institutions. From student registration to course selection and payment processing, the system handles it all. The admin dashboard provides real-time insights into enrollment statistics, class capacities, and financial summaries.",
-        image: "/images/Project3.png",
-        technologies: ["Java", "JavaFX", "Firebase", "PostgreSQL", "Scene Builder", "MVC Architecture"],
-        features: [
-            "Automated enrollment workflow",
-            "Course prerequisite validation",
-            "Payment tracking system",
-            "Class schedule generation",
-            "Student portal access"
-        ],
-        github: null,
-        liveUrl: null,
-        featured: true,
-        completionPercentage: 35,
-        role: "Full Stack Developer",
-        duration: "Ongoing"
-    },
-    {
-        id: "confidential-client-mobile-app",
-        title: "Confidential Client Mobile App",
-        type: "Mobile App",
-        status: "private",
-        statusLabel: "Deployed (Private)",
-        description: "A confidential client mobile application now deployed and serving around 50 users. Public links and source code are not shared based on client preference.",
-        longDescription: "Built and delivered a private mobile app for a client workflow, including production deployment and ongoing iteration. The app is already used in real operations with around 50 active users.",
-        image: "/images/Project3.png",
-        technologies: ["React Native", "Expo", "Node.js", "Supabase", "PostgreSQL"],
-        features: [
-            "Production-ready mobile release",
-            "Real-time data synchronization",
-            "Role-based user access",
-            "Feedback-driven feature updates",
-            "Stable usage by 50 active users"
-        ],
-        github: null,
-        liveUrl: null,
-        privateWork: true,
-        featured: true,
-        completionPercentage: 100,
-        role: "Mobile App Developer",
-        duration: "Client Project"
-    },
-    {
-        id: "confidential-figma-design-system",
-        title: "Confidential Figma Design - Product System",
-        type: "UI/UX Design",
-        status: "private",
-        statusLabel: "Completed (Private)",
-        description: "A private Figma design project for a client product interface, including wireframes, high-fidelity screens, and reusable design components.",
-        longDescription: "Designed a full UI system in Figma for a client-facing product, from user flow mapping to polished screen designs and handoff-ready components.",
-        image: "/images/Dubai.png",
-        technologies: ["Figma", "Design System", "Wireframing", "Prototyping", "UX Flow"],
-        features: [
-            "End-to-end user flow design",
-            "Reusable component library",
-            "High-fidelity desktop/mobile layouts",
-            "Interactive click-through prototypes",
-            "Developer handoff notes"
-        ],
-        github: null,
-        liveUrl: null,
-        privateWork: true,
-        featured: true,
-        completionPercentage: 100,
-        role: "UI/UX Designer",
-        duration: "Client Project"
-    },
-    {
-        id: "confidential-figma-booking-design",
-        title: "Confidential Figma Design - Booking Experience",
-        type: "UI/UX Design",
-        status: "private",
-        statusLabel: "Completed (Private)",
-        description: "A confidential Figma design project focused on a smoother booking flow and clearer conversion path. Shared publicly as private client work only.",
-        longDescription: "Created and refined booking journey screens in Figma with emphasis on clarity, trust signals, and faster task completion across mobile and desktop breakpoints.",
-        image: "/images/Project2.png",
-        technologies: ["Figma", "User Journey Mapping", "Prototyping", "Design QA", "UX Writing"],
-        features: [
-            "Optimized booking funnel screens",
-            "Mobile-first interaction patterns",
-            "Accessibility-aware spacing and hierarchy",
-            "Annotated prototype for collaboration",
-            "Structured handoff for frontend implementation"
-        ],
-        github: null,
-        liveUrl: null,
-        privateWork: true,
-        featured: true,
-        completionPercentage: 100,
-        role: "UI/UX Designer",
-        duration: "Client Project"
-    },
+        duration: "2024"
+    }
 ];
 
 // Expanded Journey/Roadmap Data - Chronological Order (oldest to newest)
